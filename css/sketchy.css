@@ -2,26 +2,6 @@ body {
   width: 960px;
 }
 
-#buttons {
-  float: left;
-  width: 200px;
-  background-color: #5C5CD6;
-  margin: 10px;
-  border-radius: 15px;
-
-}
-
-.button {
-  width: 150px;
-  height: 30px;
-  background-color: #5CD699;
-  margin: 10px auto;
-  text-align: center;
-  padding: 15px;
-  border-radius: inherit;
-
-}
-
 #container {
   overflow: hidden;
   margin: 10px;
@@ -42,4 +22,36 @@ body {
 
 .highlight {
   border: 1px solid yellow;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.checked {
+  border: 2px solid yellow;
+  color: yellow;
 }
