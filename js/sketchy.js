@@ -15,7 +15,6 @@ $(document).ready(function() {
       }
     }
   };
-
   function highLight() {
     $('.square').on('mouseenter',function() {
       $(this).addClass('highlight');
@@ -24,6 +23,7 @@ $(document).ready(function() {
       $(this).removeClass('highlight');
     });
   };
+
   $('.btn').on('click', function() {
     $(this).toggleClass("checked");
     $(this).siblings('.checked').removeClass('checked');
@@ -47,17 +47,22 @@ $(document).ready(function() {
         });
 
         break;
-
       case 'btn3': //I don't know yet
-        $('.square').on('click', function() {
-          $(this).toggleClass('blacked');
-        });
-        $('.square').on('mouseenter',function() {
-          $(this).addClass('highlight');
-        });
-        $('.square').on('mouseleave', function() {
-          $(this).removeClass('highlight');
-        });
+        //$('.square').on('click', function() {
+        //  $(this).toggleClass('blacked');
+        //});
+
+        $('.square').hover(
+          function() {
+            $(this).animate({'backgroundColor': '#FF99FF'}, 'fast',
+              $(this).css({'backgroundColor': '#FF99FF'}));
+          },
+          function() {
+            $(this).animate({'backgroundColor': '#D4CBCB'}, 3000000,
+              $(this).css({'backgroundColor': '#D4CBCB'}));
+          }
+        );
+
         break;
 
       default:
