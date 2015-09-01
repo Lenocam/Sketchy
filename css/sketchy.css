@@ -3,8 +3,11 @@ body {
 }
 
 #container {
-  overflow: hidden;
+  width: 1000;
+  height: 600;
+  overflow: auto;
   margin: 10px;
+  margin: auto;
 }
 
 .square {
@@ -15,6 +18,12 @@ body {
   display: inline-block;
 }
 
+.squareSquare {
+  background-color: black;
+  float: left;
+  border: 1px solid white;
+}
+
 .blacked {
   border: 1px solid #000000;
   background-color: #000000;
@@ -22,6 +31,9 @@ body {
 
 .highlight {
   border: 1px solid yellow;
+}
+#buttonset {
+  padding-top: 10px;
 }
 
 .btn {
@@ -54,4 +66,8 @@ body {
 .checked {
   border: 2px solid yellow;
   color: yellow;
+}
+
+.highyella {
+  background-color: #FF99FF;
 }

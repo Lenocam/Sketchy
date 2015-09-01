@@ -15,6 +15,25 @@ $(document).ready(function() {
       }
     }
   };
+
+  function sketchCreate() {
+    $('container').empty();
+    var num = getNum();
+
+    if(num >= 1 && num <= 64) {
+      var squareSize = ($('#container').width() * $('#container').height())/(num * 1000);
+
+      for (var i = 1; i <= num; i++) {
+        for(var j = 1; j <= num; j++) {
+          $('#container').append('<div class=squareSquare />');
+        }
+        $('#container').append('<div />');
+      }
+      $('.squareSquare').css('width', squareSize);
+      $('.squareSquare').css('height', squareSize);
+    }
+  }; //end of sketchCreate
+
   function highLight() {
     $('.square').on('mouseenter',function() {
       $(this).addClass('highlight');
@@ -28,15 +47,16 @@ $(document).ready(function() {
     $(this).toggleClass("checked");
     $(this).siblings('.checked').removeClass('checked');
     var switchSketch = $(this).attr('id');
-    createSketch();
     switch (switchSketch) {
       case 'btn1': //One at a time
+          createSketch();
           $('.square').on('click', function() {
             $(this).toggleClass('blacked');
           });
           highLight();
         break;
       case 'btn2': //Trippy Tracey
+        createSketch();
         highLight();
         //click blacked, mouseenter blacked, click not blacked, mouseenter not blacked
         $('.square').on('click', function() {
@@ -48,6 +68,7 @@ $(document).ready(function() {
 
         break;
       case 'btn3': //I don't know yet
+        createSketch();
         //$('.square').on('click', function() {
         //  $(this).toggleClass('blacked');
         //});
@@ -64,7 +85,8 @@ $(document).ready(function() {
         );
 
         break;
-
+      case 'btn4': //New Style
+        sketchCreate();
       default:
         console.log("didnt work");
     }
