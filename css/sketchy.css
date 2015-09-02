@@ -1,12 +1,12 @@
 body {
-  width: 960px;
+  width: auto;
 }
 
 #container {
   width: 600px;
   height: 600px;
   overflow: auto;
-  margin: 10px;
+  /* margin: 10px;*/
   margin: auto;
 }
 
@@ -21,12 +21,8 @@ body {
 .squareSquare {
   background-color: black;
 /*  float: left; */
-  border: 1px solid white;
+  border: 1px solid black;
   display: inline-block;
-}
-
-.newRow {
-  clear:both;
 }
 
 .blacked {
@@ -44,6 +40,9 @@ body {
 }
 #buttonset {
   padding-top: 10px;
+  text-align: center;
+  overflow: visible;
+
 }
 
 .btn {
@@ -61,6 +60,7 @@ body {
   font-size: 15px;
   padding: 5px;
   text-decoration: none;
+  margin: auto;
 }
 
 .btn:hover {
@@ -71,6 +71,10 @@ body {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+span {
+  font-size: 8;
 }
 
 .checked {
