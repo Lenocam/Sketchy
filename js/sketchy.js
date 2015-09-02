@@ -15,25 +15,23 @@ $(document).ready(function() {
       }
     }
   };
-
   function sketchCreate() {
-    $('container').empty();
+    $('#container').empty();
     var num = getNum();
 
     if(num >= 1 && num <= 64) {
-      var squareSize = ($('#container').width() * $('#container').height())/(num * 1000);
+      var squareSize = ($('#container').width() + $('#container').height())/(num*2) - 2;
 
       for (var i = 1; i <= num; i++) {
+        $('#container').append('<div />');
         for(var j = 1; j <= num; j++) {
           $('#container').append('<div class=squareSquare />');
         }
-        $('#container').append('<div />');
       }
       $('.squareSquare').css('width', squareSize);
       $('.squareSquare').css('height', squareSize);
     }
   }; //end of sketchCreate
-
   function highLight() {
     $('.square').on('mouseenter',function() {
       $(this).addClass('highlight');
@@ -42,7 +40,14 @@ $(document).ready(function() {
       $(this).removeClass('highlight');
     });
   };
-
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
   $('.btn').on('click', function() {
     $(this).toggleClass("checked");
     $(this).siblings('.checked').removeClass('checked');
@@ -55,7 +60,7 @@ $(document).ready(function() {
           });
           highLight();
         break;
-      case 'btn2': //Trippy Tracey
+      case 'btn2': //Drawn On/Off
         createSketch();
         highLight();
         //click blacked, mouseenter blacked, click not blacked, mouseenter not blacked
@@ -67,26 +72,23 @@ $(document).ready(function() {
         });
 
         break;
-      case 'btn3': //I don't know yet
+      case 'btn3': //Random Colors
         createSketch();
-        //$('.square').on('click', function() {
-        //  $(this).toggleClass('blacked');
-        //});
-
-        $('.square').hover(
-          function() {
-            $(this).animate({'backgroundColor': '#FF99FF'}, 'fast',
-              $(this).css({'backgroundColor': '#FF99FF'}));
-          },
-          function() {
-            $(this).animate({'backgroundColor': '#D4CBCB'}, 3000000,
-              $(this).css({'backgroundColor': '#D4CBCB'}));
-          }
-        );
+        $('.square').on("mouseenter", function() {
+          $(this).css({
+            backgroundColor: function(index, value) {
+              return getRandomColor();
+            }
+          })
+        })
 
         break;
       case 'btn4': //New Style
         sketchCreate();
+        $('.squareSquare').on('click', function() {
+          $(this).toggleClass('whited');
+        });
+        highLight();
       default:
         console.log("didnt work");
     }
