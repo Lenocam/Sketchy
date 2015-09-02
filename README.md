@@ -1,4 +1,6 @@
 # Sketchy
+http://www.theodinproject.com/web-development-101/javascript-and-jquery
+
 Odin Project Lesson: Javascript/jQuery @ 37% through the Lesson
 
 I started of by doing my own thing, somewhat inspired by only reading the first
